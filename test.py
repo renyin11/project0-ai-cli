@@ -13,7 +13,7 @@ client = OpenAI(
 
 # 让大模型回一句话
 response = client.chat.completions.create(
-    model="deepseek-chat",          # 用 DeepSeek 的通用对话模型
+    model="deepseek-flash",          # 用 DeepSeek 的通用对话模型
     messages=[
         {"role": "user", "content": "你好，请用一句话介绍你自己"}
     ]
