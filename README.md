@@ -63,14 +63,36 @@ project0-ai-cli/
 ├── commands.py        # 三个功能的具体实现
 ├── llm.py             # 大模型 client 初始化与统一调用封装
 ├── test.py            # 最小验证脚本：第一次调通 API 用
+├── old_code/          # 重构前的单文件版本，仅作存档，不参与运行
 ├── requirements.txt   # 依赖清单
 ├── .env               # API Key（不提交到 Git）
 └── .gitignore         # 忽略 venv / .env / __pycache__
 ```
 
-## 效果截图
+## 运行示例
 
-![运行效果](screenshot.png)
+```
+$ python cli.py -h
+usage: cli.py [-h] {chat,summarize,translate} ...
+
+命令行 AI 工具：对话 / 摘要 / 翻译
+
+    chat                多轮对话，输入「退出」结束
+    summarize           长文本摘要，多行粘贴后单独一行输入 END
+    translate           中英互译，自动判断语向
+
+$ python cli.py translate "我今天写完了命令行工具的入口文件"
+翻译结果：Today I finished writing the entry file for the command-line tool.
+
+$ python cli.py chat
+AI 助手已启动！输入问题开始对话，输入「退出」结束。
+你：我叫小任，记住我的名字
+AI：好的，小任，我记住了。
+你：我刚才说我叫什么？
+AI：你刚才说你叫小任。
+你：退出
+再见！
+```
 
 ## 踩过的坑
 
